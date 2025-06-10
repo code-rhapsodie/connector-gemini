@@ -20,12 +20,12 @@ services:
             -   name: ibexa.connector_ai.action_configuration.options.validator
                 type: gemini-text-to-text
 
-    Ibexa\ConnectorGemini\Validation\Validator\MaxTokensValidator:
+    CodeRhapsodie\ConnectorGemini\Validation\Validator\MaxTokensValidator:
         tags:
             -   name: ibexa.connector_ai.action_configuration.options.validator.gemini_image_to_text
             -   name: ibexa.connector_ai.action_configuration.options.validator.gemini_text_to_text
 
-    Ibexa\ConnectorGemini\Validation\Validator\TemperatureValidator:
+    CodeRhapsodie\ConnectorGemini\Validation\Validator\TemperatureValidator:
         tags:
             -   name: ibexa.connector_ai.action_configuration.options.validator.gemini_image_to_text
             -   name: ibexa.connector_ai.action_configuration.options.validator.gemini_text_to_text
