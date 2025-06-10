@@ -6,7 +6,7 @@ The code-rhapsodie/connector-gemini bundle integrates Google Gemini into Ibexa D
 
 ### Step 1: Install the bundle via composer
 ```bash
-  composer require ibexa/connector-gemini
+  composer require code-rhapsodie/connector-gemini
 ```
 
 ### Step 2: Enable the bundle
