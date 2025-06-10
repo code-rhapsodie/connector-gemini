@@ -137,49 +137,8 @@ final class ImageToTextActionHandlerTest extends AbstractActionHandlerTest
         self::assertEquals('foo', $actionResponse->getOutput()->getText());
     }
 
-    /**
-     * @return array<string, mixed>
-     */
-    private function getOpts(
-        string $text = 'Generate alt text for given image. You reply in english language only',
-        string $model = 'gpt-4-turbo',
-        int $maxTokens = 4096,
-        int $temperature = 1
-    ): array {
-        return [
-            'model' => $model,
-            'messages' => [
-                [
-                    'role' => 'user',
-                    'content' => [
-                        [
-                            'type' => 'text',
-                            'text' => $text,
-                        ],
-                        [
-                            'type' => 'image_url',
-                            'image_url' => [
-                                'url' => 'data:image/jpeg;base64,R0lGODdhAQABAPAAAP8AAAAAACwAAAAAAQABAAACAkQBADs=',
-                                'detail' => 'low',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'max_tokens' => $maxTokens,
-            'temperature' => $temperature,
-        ];
-    }
-
     public function testHandleWithActionConfiguration(): void
     {
-        $opts = $this->getOpts(
-            'Generate alt text for given image. You reply in english language only. Do not exceed text length of 100 characters. Make it sound cute',
-            'gpt-3.5-turbo',
-            2048,
-            2
-        );
-
         $actionConfiguration = $this->getActionConfiguration();
         $action = new GenerateAltTextAction(new Image(['data:image/jpeg;base64,R0lGODdhAQABAPAAAP8AAAAAACwAAAAAAQABAAACAkQBADs=']));
         $actionContext = ActionContextFactory::create(

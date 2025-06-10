@@ -136,7 +136,7 @@ final class TextToTextActionHandlerTest extends AbstractActionHandlerTest
             new Options(),
             new Options(),
             new Options([
-                'model' => 'gpt-4-turbo',
+                'model' => 'gemini-2.0-flash',
                 'prompt' => 'Make it sound funny',
                 'max_tokens' => 4096,
                 'temperature' => 1,

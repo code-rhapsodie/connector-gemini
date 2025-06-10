@@ -48,35 +48,35 @@ final class CRConnectorGeminiExtensionTest extends AbstractExtensionTestCase
         $this->load([
             'text_to_text' => [
                 'models' => [
-                    'gpt-3.5-turbo' => 'GPT-3.5-turbo',
+                    'gemini-2.0-flash' => 'Gemini 2.0',
                 ],
-                'default_model' => 'gpt-3.5-turbo',
+                'default_model' => 'gemini-2.0-flash',
                 'default_max_tokens' => 1000,
                 'default_temperature' => 0.5,
             ],
             'image_to_text' => [
                 'models' => [
-                    'gpt-4o-mini' => 'GPT-4o mini',
-                    'gpt-4-turbo' => 'GPT-4 Turbo',
+                    'gemini-2.5-flash' => 'Gemini 2.5',
+                    'gemini-2.0-flash' => 'Gemini 2.0',
                 ],
-                'default_model' => 'gpt-4o-mini',
+                'default_model' => 'gemini-2.0-flash',
                 'default_max_tokens' => 2048,
                 'default_temperature' => 2.0,
             ],
         ]);
 
         $this->assertParameter([
-            'gpt-3.5-turbo' => 'GPT-3.5-turbo',
+            'gemini-2.0-flash' => 'Gemini 2.0',
         ], 'text_to_text', 'models');
-        $this->assertParameter('gpt-3.5-turbo', 'text_to_text', 'default_model');
+        $this->assertParameter('gemini-2.0-flash', 'text_to_text', 'default_model');
         $this->assertParameter(1000, 'text_to_text', 'default_max_tokens');
         $this->assertParameter(0.5, 'text_to_text', 'default_temperature');
 
         $this->assertParameter([
-            'gpt-4o-mini' => 'GPT-4o mini',
-            'gpt-4-turbo' => 'GPT-4 Turbo',
+            'gemini-2.5-flash' => 'Gemini 2.5',
+            'gemini-2.0-flash' => 'Gemini 2.0',
         ], 'image_to_text', 'models');
-        $this->assertParameter('gpt-4o-mini', 'image_to_text', 'default_model');
+        $this->assertParameter('gemini-2.0-flash', 'image_to_text', 'default_model');
         $this->assertParameter(2048, 'image_to_text', 'default_max_tokens');
         $this->assertParameter(2.0, 'image_to_text', 'default_temperature');
     }
