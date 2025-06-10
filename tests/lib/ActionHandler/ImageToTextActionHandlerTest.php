@@ -40,9 +40,6 @@ final class ImageToTextActionHandlerTest extends AbstractActionHandlerTest
 {
     private ImageToTextActionHandler $handler;
 
-    /** @var \PHPUnit\Framework\MockObject\MockObject&\Gemini\Contracts\ClientContract */
-    private $client;
-
     protected function setUp(): void
     {
         $actionTypeRegistry = new ActionTypeRegistry(
@@ -55,7 +52,7 @@ final class ImageToTextActionHandlerTest extends AbstractActionHandlerTest
             ]
         );
 
-        $this->client = new ClientFake([
+        $client = new ClientFake([
             GenerateContentResponse::fake([
                 'candidates' => [
                     [
@@ -74,7 +71,7 @@ final class ImageToTextActionHandlerTest extends AbstractActionHandlerTest
         $clientProvider = $this->createMock(ClientProviderInterface::class);
         $clientProvider
             ->method('getClient')
-            ->willReturn($this->client);
+            ->willReturn($client);
 
         $languageService = $this->createMock(LanguageService::class);
         $languageService

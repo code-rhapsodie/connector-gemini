@@ -62,7 +62,7 @@ final class ImageToTextActionHandler extends AbstractActionHandler
                 new Blob(mimeType: MimeType::from($matches[1]), data: $matches[2]),
             ])->toArray();
 
-        $text = [];
+        $text = [''];
         if (isset($data['candidates'][0]['content']['parts'][0]['text'])) {
             $text = [$data['candidates'][0]['content']['parts'][0]['text']];
         }

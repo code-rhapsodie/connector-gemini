@@ -52,7 +52,7 @@ final class TextToTextActionHandler extends AbstractActionHandler
                 $this->promptResolver->getPrompt($options),
             ])->toArray();
 
-        $text = [];
+        $text = [''];
         if (isset($data['candidates'][0]['content']['parts'][0]['text'])) {
             $text = [$data['candidates'][0]['content']['parts'][0]['text']];
         }
