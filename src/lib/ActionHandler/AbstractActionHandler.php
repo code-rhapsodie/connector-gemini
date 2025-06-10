@@ -10,6 +10,7 @@ namespace CodeRhapsodie\ConnectorGemini\ActionHandler;
 
 use CodeRhapsodie\Contracts\ConnectorGemini\ClientProviderInterface;
 use Gemini\Client;
+use Gemini\Contracts\ClientContract;
 use Ibexa\Contracts\ConnectorAi\Action\ActionHandlerInterface;
 use Ibexa\Contracts\ConnectorAi\Action\LLMBaseActionTypeInterface;
 use Ibexa\Contracts\ConnectorAi\ActionInterface;
@@ -25,7 +26,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class AbstractActionHandler implements ActionHandlerInterface
 {
-    protected Client $client;
+    protected ClientContract $client;
 
     protected ActionTypeRegistryInterface $actionTypeRegistry;
 

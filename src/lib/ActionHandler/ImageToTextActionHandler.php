@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @copyright Copyright (C) Ibexa AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- */
 declare(strict_types=1);
 
 namespace CodeRhapsodie\ConnectorGemini\ActionHandler;
@@ -26,7 +22,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 final class ImageToTextActionHandler extends AbstractActionHandler
 {
     public const INDEX = 'gemini-image-to-text';
-
 
     private PromptResolverInterface $promptResolver;
 
