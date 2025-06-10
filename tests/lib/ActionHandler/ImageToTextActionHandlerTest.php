@@ -40,7 +40,7 @@ final class ImageToTextActionHandlerTest extends AbstractActionHandlerTest
 {
     private ImageToTextActionHandler $handler;
 
-    /** @var \PHPUnit\Framework\MockObject\MockObject&ClientContract */
+    /** @var \PHPUnit\Framework\MockObject\MockObject&\Gemini\Contracts\ClientContract */
     private $client;
 
     protected function setUp(): void
