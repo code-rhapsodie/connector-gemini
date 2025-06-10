@@ -9,7 +9,7 @@ use RuntimeException;
 trait ResponseFormatter
 {
     /**
-     * @param array $data
+     * @param array<mixed> $data
      *
      * @return non-empty-array<string>
      */
