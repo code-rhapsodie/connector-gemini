@@ -31,7 +31,7 @@ GEMINI_API_KEY=your-google-gemini-api-key-here
   php bin/console ibexa:migrations:import vendor/code-rhapsodie/connector-gemini/src/bundle/Resources/migrations/action_configurations.yaml
 ```
 
-### Step 5: Import execute Ibexa migration
+### Step 5: Execute Ibexa migration
 ```bash
   php bin/console ibexa:migrations:migrate
 ```
