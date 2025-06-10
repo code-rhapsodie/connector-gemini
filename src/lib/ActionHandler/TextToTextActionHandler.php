@@ -18,6 +18,8 @@ use Ibexa\Contracts\Core\Repository\LanguageService;
 
 final class TextToTextActionHandler extends AbstractActionHandler
 {
+    use ResponseFormatter;
+
     public const INDEX = 'gemini-text-to-text';
 
     private PromptResolverInterface $promptResolver;
@@ -52,12 +54,7 @@ final class TextToTextActionHandler extends AbstractActionHandler
                 $this->promptResolver->getPrompt($options),
             ])->toArray();
 
-        $text = [''];
-        if (isset($data['candidates'][0]['content']['parts'][0]['text'])) {
-            $text = [$data['candidates'][0]['content']['parts'][0]['text']];
-        }
-
-        return new TextResponse(new Text($text));
+        return new TextResponse(new Text($this->format($data)));
     }
 
     public static function getIdentifier(): string

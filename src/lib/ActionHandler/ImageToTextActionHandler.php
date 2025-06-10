@@ -21,6 +21,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class ImageToTextActionHandler extends AbstractActionHandler
 {
+    use ResponseFormatter;
+
     public const INDEX = 'gemini-image-to-text';
 
     private PromptResolverInterface $promptResolver;
@@ -62,12 +64,7 @@ final class ImageToTextActionHandler extends AbstractActionHandler
                 new Blob(mimeType: MimeType::from($matches[1]), data: $matches[2]),
             ])->toArray();
 
-        $text = [''];
-        if (isset($data['candidates'][0]['content']['parts'][0]['text'])) {
-            $text = [$data['candidates'][0]['content']['parts'][0]['text']];
-        }
-
-        return new TextResponse(new Text($text));
+        return new TextResponse(new Text($this->format($data)));
     }
 
     public static function getIdentifier(): string
