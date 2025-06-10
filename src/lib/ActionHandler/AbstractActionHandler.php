@@ -1,15 +1,13 @@
 <?php
 
-/**
- * @copyright Copyright (C) Ibexa AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- */
+
 declare(strict_types=1);
 
 namespace CodeRhapsodie\ConnectorGemini\ActionHandler;
 
 use CodeRhapsodie\Contracts\ConnectorGemini\ClientProviderInterface;
 use Gemini\Client;
+use Gemini\Contracts\ClientContract;
 use Ibexa\Contracts\ConnectorAi\Action\ActionHandlerInterface;
 use Ibexa\Contracts\ConnectorAi\Action\LLMBaseActionTypeInterface;
 use Ibexa\Contracts\ConnectorAi\ActionInterface;
@@ -25,7 +23,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class AbstractActionHandler implements ActionHandlerInterface
 {
-    protected Client $client;
+    protected ClientContract $client;
 
     protected ActionTypeRegistryInterface $actionTypeRegistry;
 

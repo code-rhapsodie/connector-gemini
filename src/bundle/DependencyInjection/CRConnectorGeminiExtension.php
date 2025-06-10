@@ -30,7 +30,6 @@ final class CRConnectorGeminiExtension extends Extension implements PrependExten
         foreach ($mergedConfig as $actionType => $actionTypeConfig) {
             foreach ($actionTypeConfig as $key => $value) {
                 $container->setParameter(sprintf('cr.connector_gemini.%s.%s', $actionType, $key), $value);
-
             }
         }
 
@@ -68,7 +67,7 @@ final class CRConnectorGeminiExtension extends Extension implements PrependExten
                     'dirs' => [
                         __DIR__ . '/../../',
                     ],
-                    'excluded_dirs' => ['Behat'],
+                    'excluded_dirs' => [],
                     'output_dir' => __DIR__ . '/../Resources/translations/',
                     'output_format' => 'xliff',
                 ],

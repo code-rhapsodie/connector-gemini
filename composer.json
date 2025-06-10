@@ -41,6 +41,7 @@
         "symfony/yaml": "^5.4"
     },
     "require-dev": {
+        "dama/doctrine-test-bundle": "^v6.7",
         "ibexa/admin-ui": "~4.6",
         "ibexa/code-style": "~2.0.0",
         "ibexa/content-forms": "~4.6",
@@ -54,9 +55,26 @@
         "ibexa/personalization": "~4.6",
         "ibexa/product-catalog": "~4.6",
         "ibexa/rest": "~4.6",
+        "ibexa/scheduler": "^4.6",
         "ibexa/search": "~4.6",
         "ibexa/taxonomy": "~4.6",
-        "ibexa/twig-components": "~4.6"
+        "ibexa/test-core": "4.6.x-dev",
+        "ibexa/twig-components": "~4.6",
+        "ibexa/version-comparison": "^4.6",
+        "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpstan/phpstan-symfony": "^2.0",
+        "phpunit/phpunit": "^9",
+        "qossmic/deptrac-shim": "^0.24.0 || ^1.0.2"
+    },
+    "scripts": {
+        "fix-cs": "php-cs-fixer fix --config=.php-cs-fixer.php --show-progress=dots --allow-risky=yes",
+        "check-cs": "@fix-cs --dry-run",
+        "test": "phpunit -c phpunit.xml.dist",
+        "test-integration": "phpunit -c phpunit.integration.xml",
+        "phpstan": "phpstan analyse -c phpstan.neon",
+        "deptrac": "php vendor/bin/deptrac analyse"
     },
     "extra": {
         "branch-alias": {
@@ -68,6 +86,13 @@
             "CodeRhapsodie\\Bundle\\ConnectorGemini\\": "src/bundle/",
             "CodeRhapsodie\\Contracts\\ConnectorGemini\\": "src/contracts/",
             "CodeRhapsodie\\ConnectorGemini\\": "src/lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodeRhapsodie\\Tests\\Bundle\\ConnectorGemini\\": "tests/bundle/",
+            "CodeRhapsodie\\Tests\\Integration\\ConnectorGemini\\": "tests/integration/",
+            "CodeRhapsodie\\Tests\\ConnectorGemini\\": "tests/lib/"
         }
     },
     "config": {

@@ -1,0 +1,7 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Class CodeRhapsodie\\Bundle\\ConnectorGemini\\Form\\Type\\AbstractActionConfigurationOptions extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/bundle/Form/Type/AbstractActionConfigurationOptions.php
