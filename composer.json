@@ -1,0 +1,74 @@
+{
+    "name": "code-rhapsodie/connector-gemini",
+    "description": "Connector for Google Gemini in Ibexa",
+    "license": "MIT",
+    "type": "ibexa-bundle",
+    "keywords": [
+        "ibexa-dxp", "ibexa", "ia", "gemini"
+    ],
+    "authors": [
+        {
+            "name": "Loïc A.",
+            "email": "loic@code-rhapsodie.fr",
+            "role": "Developer"
+        },
+        {
+            "name": "Code Rhapsodie",
+            "homepage": "https://www.code-rhapsodie.fr/"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://updates.ibexa.co"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "google-gemini-php/symfony": "^2.0",
+        "ibexa/connector-ai": "~4.6",
+        "ibexa/core-search": "~4.6",
+        "symfony/config": "^5.4",
+        "symfony/dependency-injection": "^5.4",
+        "symfony/http-foundation": "^5.4",
+        "symfony/http-kernel": "^5.4",
+        "symfony/yaml": "^5.4"
+    },
+    "require-dev": {
+        "ibexa/admin-ui": "~4.6",
+        "ibexa/code-style": "~2.0.0",
+        "ibexa/content-forms": "~4.6",
+        "ibexa/core": "~4.6",
+        "ibexa/core-persistence": "~4.6",
+        "ibexa/doctrine-schema": "~4.6",
+        "ibexa/fieldtype-richtext": "~4.6",
+        "ibexa/graphql": "~4.6",
+        "ibexa/installer": "~4.6",
+        "ibexa/migrations": "~4.6",
+        "ibexa/personalization": "~4.6",
+        "ibexa/product-catalog": "~4.6",
+        "ibexa/rest": "~4.6",
+        "ibexa/search": "~4.6",
+        "ibexa/taxonomy": "~4.6",
+        "ibexa/twig-components": "~4.6"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "4.6.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeRhapsodie\\Bundle\\ConnectorGemini\\": "src/bundle/",
+            "CodeRhapsodie\\Contracts\\ConnectorGemini\\": "src/contracts/",
+            "CodeRhapsodie\\ConnectorGemini\\": "src/lib/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="f61ae31cb689b76ac63caed17de398ee63a69283" resname="Max tokens must be greater than 0 and equal or lower or than 4096.">
+        <source>Max tokens must be greater than 0 and equal or lower than 4096.</source>
+        <target state="new">Max tokens must be greater than 0 and equal or lower than 4096.</target>
+        <note>key: Max tokens must be greater than 0 and equal or lower or than 4096.</note>
+      </trans-unit>
+      <trans-unit id="7e3d39ab82991d4042852afef8647eff33c73b36" resname="Temperature must be a number between 0 and 2.">
+        <source>Temperature must be a number between 0 and 2.</source>
+        <target state="new">Temperature must be a number between 0 and 2.</target>
+        <note>key: Temperature must be a number between 0 and 2.</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

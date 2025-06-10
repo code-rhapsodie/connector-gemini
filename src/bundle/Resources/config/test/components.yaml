@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Ibexa\ConnectorGemini\Behat\Component\AIActionsList: ~
+
+    Ibexa\ConnectorGemini\Behat\Component\AIAssistant: ~
+
+    Ibexa\ConnectorGemini\Behat\Component\AIActionsListRTE: ~
+
+    Ibexa\ConnectorGemini\Behat\Component\AIAssistantRTE: ~

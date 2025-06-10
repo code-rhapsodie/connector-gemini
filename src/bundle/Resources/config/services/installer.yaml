@@ -1,0 +1,12 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    CodeRhapsodie\Bundle\ConnectorGemini\Installer\InstallerProvisioner:
+        tags:
+            -   name: ibexa.installer.provisioner.commerce
+            -   name: ibexa.installer.provisioner.experience
+            -   name: ibexa.installer.provisioner.headless
+

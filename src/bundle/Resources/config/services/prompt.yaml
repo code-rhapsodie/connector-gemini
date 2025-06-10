@@ -1,0 +1,29 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    CodeRhapsodie\ConnectorGemini\ActionHandler\ImageToTextPromptFactory:
+        class:   Ibexa\Contracts\ConnectorAi\Prompt\PromptFactory
+        arguments:
+            $prompts:
+                - '@Ibexa\ConnectorAi\Prompt\BasePrompt'
+                - '@Ibexa\ConnectorAi\Prompt\LanguagePrompt'
+                - '@Ibexa\ConnectorAi\Prompt\LengthPrompt'
+                - '@Ibexa\ConnectorAi\Prompt\AdditionalPrompt'
+            $identifier: 'gemini-image-to-text'
+        tags:
+            - { name: ibexa.ai.prompt_factory, key: 'gemini-image-to-text' }
+
+    CodeRhapsodie\ConnectorGemini\ActionHandler\TextToTextPromptFactory:
+        class:   Ibexa\Contracts\ConnectorAi\Prompt\PromptFactory
+        arguments:
+            $prompts:
+                - '@Ibexa\ConnectorAi\Prompt\BasePrompt'
+                - '@Ibexa\ConnectorAi\Prompt\LanguagePrompt'
+                - '@Ibexa\ConnectorAi\Prompt\AdditionalPrompt'
+                - '@Ibexa\ConnectorAi\Prompt\ActionInputTextPrompt'
+            $identifier: 'gemini-text-to-text'
+        tags:
+            - { name: ibexa.ai.prompt_factory, key: 'gemini-text-to-text' }

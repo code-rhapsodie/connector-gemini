@@ -1,0 +1,31 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    ibexa.connector_ai.action_configuration.options.gemini_image_to_text_compound_validator:
+        class: Ibexa\ConnectorAi\Validation\Validator\CompoundValidator
+        arguments:
+            $validators: !tagged_iterator { tag: 'ibexa.connector_ai.action_configuration.options.validator.gemini_image_to_text' }
+        tags:
+            -   name: ibexa.connector_ai.action_configuration.options.validator
+                type: gemini-image-to-text
+
+    ibexa.connector_ai.action_configuration.options.gemini_text_to_text_compound_validator:
+        class: Ibexa\ConnectorAi\Validation\Validator\CompoundValidator
+        arguments:
+            $validators: !tagged_iterator { tag: 'ibexa.connector_ai.action_configuration.options.validator.gemini_text_to_text' }
+        tags:
+            -   name: ibexa.connector_ai.action_configuration.options.validator
+                type: gemini-text-to-text
+
+    Ibexa\ConnectorGemini\Validation\Validator\MaxTokensValidator:
+        tags:
+            -   name: ibexa.connector_ai.action_configuration.options.validator.gemini_image_to_text
+            -   name: ibexa.connector_ai.action_configuration.options.validator.gemini_text_to_text
+
+    Ibexa\ConnectorGemini\Validation\Validator\TemperatureValidator:
+        tags:
+            -   name: ibexa.connector_ai.action_configuration.options.validator.gemini_image_to_text
+            -   name: ibexa.connector_ai.action_configuration.options.validator.gemini_text_to_text

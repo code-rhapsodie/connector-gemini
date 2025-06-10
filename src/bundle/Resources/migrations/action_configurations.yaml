@@ -1,0 +1,137 @@
+-   type: action_configuration
+    mode: create
+    identifier: gen_alt_text
+    enabled: true
+    names:
+        'eng-GB': 'Generate alternative text'
+    descriptions:
+        'eng-GB': ''
+    action_handler_identifier: gemini-image-to-text
+    action_handler_options:
+        max_tokens: 4000
+        temperature: 1
+        prompt: ''
+        model: 'gemini-2.0-flash'
+    action_type_identifier: generate_alt_text
+    action_type_options:
+        max_length: 140
+
+-   type: action_configuration
+    mode: create
+    identifier: improve_readability
+    enabled: true
+    names:
+        'eng-GB': 'Improve readability'
+    descriptions:
+        'eng-GB': ''
+    action_handler_identifier: gemini-text-to-text
+    action_handler_options:
+        max_tokens: 4000
+        temperature: 1
+        prompt: 'Rewrite this content to improve readability. Preserve meaning and crucial information.'
+        model: 'gemini-2.0-flash'
+    action_type_identifier: refine_text
+    action_type_options: ~
+
+-   type: action_configuration
+    mode: create
+    identifier: proofread
+    enabled: true
+    names:
+        'eng-GB': 'Proofread'
+    descriptions:
+        'eng-GB': ''
+    action_handler_identifier: gemini-text-to-text
+    action_handler_options:
+        max_tokens: 4000
+        temperature: 1
+        prompt: 'Rewrite given text to identify and fix grammatical and punctuation errors. Preserve meaning and crucial information.'
+        model: 'gemini-2.0-flash'
+    action_type_identifier: refine_text
+    action_type_options: ~
+
+-   type: action_configuration
+    mode: create
+    identifier: shorten_text
+    enabled: true
+    names:
+        'eng-GB': 'Shorten text'
+    descriptions:
+        'eng-GB': ''
+    action_handler_identifier: gemini-text-to-text
+    action_handler_options:
+        max_tokens: 4000
+        temperature: 1
+        prompt: 'Shorten the given text by 25%. Preserve meaning and crucial information.'
+        model: 'gemini-2.0-flash'
+    action_type_identifier: refine_text
+    action_type_options: ~
+
+-   type: action_configuration
+    mode: create
+    identifier: expand_text
+    enabled: true
+    names:
+        'eng-GB': 'Expand text'
+    descriptions:
+        'eng-GB': ''
+    action_handler_identifier: gemini-text-to-text
+    action_handler_options:
+        max_tokens: 4000
+        temperature: 1
+        prompt: 'Expand the given text by 25%. Preserve meaning and crucial information.'
+        model: 'gemini-2.0-flash'
+    action_type_identifier: refine_text
+    action_type_options: ~
+
+-   type: action_configuration
+    mode: create
+    identifier: summarize_text
+    enabled: true
+    names:
+        'eng-GB': 'Summarize'
+    descriptions:
+        'eng-GB': ''
+    action_handler_identifier: gemini-text-to-text
+    action_handler_options:
+        max_tokens: 4000
+        temperature: 1
+        prompt: 'Summarize text into one sentence. Preserve meaning and crucial information.'
+        model: 'gemini-2.0-flash'
+    action_type_identifier: refine_text
+    action_type_options: ~
+
+-   type: action_configuration
+    mode: create
+    identifier: rewrite_with_professional_tone
+    enabled: true
+    names:
+        'eng-GB': 'Rewrite in professional tone'
+    descriptions:
+        'eng-GB': ''
+    action_handler_identifier: gemini-text-to-text
+    action_handler_options:
+        max_tokens: 4000
+        temperature: 1
+        prompt: 'Rewrite text in professional tone. Preserve meaning and crucial information.'
+        model: 'gemini-2.0-flash'
+    action_type_identifier: refine_text
+    action_type_options: ~
+
+-   type: action_configuration
+    mode: create
+    identifier: rewrite_with_friendly_tone
+    enabled: true
+    names:
+        'eng-GB': 'Rewrite in friendly tone'
+    descriptions:
+        'eng-GB': ''
+    action_handler_identifier: gemini-text-to-text
+    action_handler_options:
+        max_tokens: 4000
+        temperature: 1
+        prompt: 'Rewrite text in friendly tone. Preserve meaning and crucial information.'
+        model: 'gemini-2.0-flash'
+    action_type_identifier: refine_text
+    action_type_options: ~
+

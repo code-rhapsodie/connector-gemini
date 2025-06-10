@@ -1,0 +1,23 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    CodeRhapsodie\ConnectorGemini\ActionHandler\ImageToTextActionHandler:
+        calls:
+            - setDefaultMaxTokens: [ '%cr.connector_gemini.image_to_text.default_max_tokens%' ]
+            - setDefaultTemperature: [ '%cr.connector_gemini.image_to_text.default_temperature%' ]
+            - setDefaultModel: [ '%cr.connector_gemini.image_to_text.default_model%' ]
+        tags:
+            - { name: ibexa.ai.action.handler, priority: 100 }
+            - { name: ibexa.ai.action.handler.image_to_text, priority: 100 }
+
+    CodeRhapsodie\ConnectorGemini\ActionHandler\TextToTextActionHandler:
+        calls:
+            - setDefaultMaxTokens: [ '%cr.connector_gemini.text_to_text.default_max_tokens%' ]
+            - setDefaultTemperature: [ '%cr.connector_gemini.text_to_text.default_temperature%' ]
+            - setDefaultModel: [ '%cr.connector_gemini.text_to_text.default_model%' ]
+        tags:
+            - { name: ibexa.ai.action.handler, priority: 100 }
+            - { name: ibexa.ai.action.handler.text_to_text, priority: 100 }

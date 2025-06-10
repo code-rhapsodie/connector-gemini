@@ -1,0 +1,2 @@
+parameters:
+    ibexa.site_access.config.default.connector_gemini.gemini.api_key: '%env(GEMINI_API_KEY)%'
