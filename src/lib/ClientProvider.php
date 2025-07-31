@@ -10,14 +10,10 @@ use Gemini;
 use Gemini\Client;
 use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
 
-final class ClientProvider implements ClientProviderInterface
+final readonly class ClientProvider implements ClientProviderInterface
 {
-    private ConfigResolverInterface $configResolver;
-
-    public function __construct(
-        ConfigResolverInterface $configResolver
-    ) {
-        $this->configResolver = $configResolver;
+    public function __construct(private ConfigResolverInterface $configResolver)
+    {
     }
 
     public function getClient(): Client

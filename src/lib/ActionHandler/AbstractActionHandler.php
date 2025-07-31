@@ -25,28 +25,19 @@ abstract class AbstractActionHandler implements ActionHandlerInterface
 {
     protected ClientContract $client;
 
-    protected ActionTypeRegistryInterface $actionTypeRegistry;
-
     protected string $defaultModel = 'gemini-2.0-flash';
 
     protected int $defaultMaxTokens = 4096;
 
     protected float $defaultTemperature = 1.0;
 
-    private LanguageService $languageService;
-
-    private LanguageResolver $languageResolver;
-
     public function __construct(
         ClientProviderInterface $clientProvider,
-        ActionTypeRegistryInterface $actionTypeRegistry,
-        LanguageService $languageService,
-        LanguageResolver $languageResolver
+        protected ActionTypeRegistryInterface $actionTypeRegistry,
+        private readonly LanguageService $languageService,
+        private readonly LanguageResolver $languageResolver
     ) {
         $this->client = $clientProvider->getClient();
-        $this->actionTypeRegistry = $actionTypeRegistry;
-        $this->languageService = $languageService;
-        $this->languageResolver = $languageResolver;
     }
 
     protected function buildPrompt(ActionInterface $action): string

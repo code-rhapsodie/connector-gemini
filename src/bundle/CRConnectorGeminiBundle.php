@@ -12,6 +12,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 final class CRConnectorGeminiBundle extends Bundle
 {
+    #[\Override]
     public function getContainerExtension(): ExtensionInterface
     {
         return new CRConnectorGeminiExtension();

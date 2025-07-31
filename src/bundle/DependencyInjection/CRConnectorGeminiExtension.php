@@ -14,8 +14,9 @@ use Symfony\Component\Yaml\Yaml;
 
 final class CRConnectorGeminiExtension extends Extension implements PrependExtensionInterface
 {
-    public const EXTENSION_NAME = 'cr_connector_gemini';
+    public const string EXTENSION_NAME = 'cr_connector_gemini';
 
+    #[\Override]
     public function getAlias(): string
     {
         return self::EXTENSION_NAME;

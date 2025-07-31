@@ -55,6 +55,7 @@ use Symfony\WebpackEncoreBundle\WebpackEncoreBundle;
 
 final class Kernel extends IbexaTestKernel
 {
+    #[\Override]
     public function registerBundles(): iterable
     {
         yield from parent::registerBundles();
@@ -86,6 +87,7 @@ final class Kernel extends IbexaTestKernel
         yield new IbexaTwigComponentsBundle();
     }
 
+    #[\Override]
     public function getSchemaFiles(): iterable
     {
         yield from parent::getSchemaFiles();
@@ -103,6 +105,7 @@ final class Kernel extends IbexaTestKernel
         yield new YamlFixture(__DIR__ . $path);
     }
 
+    #[\Override]
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
         parent::registerContainerConfiguration($loader);
@@ -122,6 +125,7 @@ final class Kernel extends IbexaTestKernel
         });
     }
 
+    #[\Override]
     protected static function getExposedServicesByClass(): iterable
     {
         yield from parent::getExposedServicesByClass();
@@ -132,6 +136,7 @@ final class Kernel extends IbexaTestKernel
         yield ActionServiceInterface::class;
     }
 
+    #[\Override]
     protected static function getExposedServicesById(): iterable
     {
         yield GenerateAltTextActionType::class => ActionTypeInterface::class;

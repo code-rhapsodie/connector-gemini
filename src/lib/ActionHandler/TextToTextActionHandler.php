@@ -20,20 +20,16 @@ final class TextToTextActionHandler extends AbstractActionHandler
 {
     use ResponseFormatter;
 
-    public const INDEX = 'gemini-text-to-text';
-
-    private PromptResolverInterface $promptResolver;
+    public const string INDEX = 'gemini-text-to-text';
 
     public function __construct(
         ClientProviderInterface $clientProvider,
         ActionTypeRegistryInterface $actionTypeRegistry,
         LanguageService $languageService,
         LanguageResolver $languageResolver,
-        PromptResolverInterface $promptResolver
+        private PromptResolverInterface $promptResolver
     ) {
         parent::__construct($clientProvider, $actionTypeRegistry, $languageService, $languageResolver);
-
-        $this->promptResolver = $promptResolver;
     }
 
     public function supports(ActionInterface $action): bool

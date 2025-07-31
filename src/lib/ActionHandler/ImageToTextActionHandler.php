@@ -23,20 +23,16 @@ final class ImageToTextActionHandler extends AbstractActionHandler
 {
     use ResponseFormatter;
 
-    public const INDEX = 'gemini-image-to-text';
-
-    private PromptResolverInterface $promptResolver;
+    public const string INDEX = 'gemini-image-to-text';
 
     public function __construct(
         ClientProviderInterface $clientProvider,
         ActionTypeRegistryInterface $actionTypeRegistry,
         LanguageService $languageService,
         LanguageResolver $languageResolver,
-        PromptResolverInterface $promptResolver
+        private PromptResolverInterface $promptResolver
     ) {
         parent::__construct($clientProvider, $actionTypeRegistry, $languageService, $languageResolver);
-
-        $this->promptResolver = $promptResolver;
     }
 
     public function supports(ActionInterface $action): bool
@@ -72,6 +68,7 @@ final class ImageToTextActionHandler extends AbstractActionHandler
         return self::INDEX;
     }
 
+    #[\Override]
     protected function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);

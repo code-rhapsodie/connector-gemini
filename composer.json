@@ -29,44 +29,45 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.3",
         "ext-json": "*",
         "google-gemini-php/symfony": "^2.0",
-        "ibexa/connector-ai": "~4.6",
-        "ibexa/core-search": "~4.6",
-        "symfony/config": "^5.4",
-        "symfony/dependency-injection": "^5.4",
-        "symfony/http-foundation": "^5.4",
-        "symfony/http-kernel": "^5.4",
-        "symfony/yaml": "^5.4"
+        "ibexa/connector-ai": "~5.0",
+        "ibexa/core-search": "~5.0",
+        "symfony/config": "^7.3",
+        "symfony/dependency-injection": "^7.3",
+        "symfony/http-foundation": "^7.3",
+        "symfony/http-kernel": "^7.3",
+        "symfony/yaml": "^7.3"
     },
     "require-dev": {
-        "dama/doctrine-test-bundle": "^v6.7",
-        "ibexa/admin-ui": "~4.6",
+        "dama/doctrine-test-bundle": "^v8.3.0",
+        "ibexa/admin-ui": "~5.0",
         "ibexa/code-style": "~2.0.0",
-        "ibexa/content-forms": "~4.6",
-        "ibexa/core": "~4.6",
-        "ibexa/core-persistence": "~4.6",
-        "ibexa/doctrine-schema": "~4.6",
-        "ibexa/fieldtype-richtext": "~4.6",
-        "ibexa/graphql": "~4.6",
-        "ibexa/installer": "~4.6",
-        "ibexa/migrations": "~4.6",
-        "ibexa/personalization": "~4.6",
-        "ibexa/product-catalog": "~4.6",
-        "ibexa/rest": "~4.6",
-        "ibexa/scheduler": "^4.6",
-        "ibexa/search": "~4.6",
-        "ibexa/taxonomy": "~4.6",
-        "ibexa/test-core": "4.6.x-dev",
-        "ibexa/twig-components": "~4.6",
-        "ibexa/version-comparison": "^4.6",
-        "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+        "ibexa/content-forms": "~5.0",
+        "ibexa/core": "~5.0",
+        "ibexa/core-persistence": "~5.0",
+        "ibexa/doctrine-schema": "~5.0",
+        "ibexa/fieldtype-richtext": "~5.0",
+        "ibexa/graphql": "~5.0",
+        "ibexa/installer": "~5.0",
+        "ibexa/migrations": "~5.0",
+        "ibexa/personalization": "~5.0",
+        "ibexa/product-catalog": "~5.0",
+        "ibexa/rest": "~5.0",
+        "ibexa/scheduler": "~5.0",
+        "ibexa/search": "~5.0",
+        "ibexa/taxonomy": "~5.0",
+        "ibexa/test-core": "~5.0-dev",
+        "ibexa/twig-components": "~5.0",
+        "ibexa/version-comparison": "~5.0",
+        "matthiasnoback/symfony-dependency-injection-test": "^6.1.0",
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-symfony": "^2.0",
-        "phpunit/phpunit": "^9",
-        "qossmic/deptrac-shim": "^0.24.0 || ^1.0.2"
+        "phpunit/phpunit": "^12",
+        "qossmic/deptrac-shim": "^0.24.0 || ^1.0.2",
+        "rector/rector": "^2.1"
     },
     "scripts": {
         "fix-cs": "php-cs-fixer fix --config=.php-cs-fixer.php --show-progress=dots --allow-risky=yes",
@@ -75,11 +76,6 @@
         "test-integration": "phpunit -c phpunit.integration.xml",
         "phpstan": "phpstan analyse -c phpstan.neon",
         "deptrac": "php vendor/bin/deptrac analyse"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-main": "4.6.x-dev"
-        }
     },
     "autoload": {
         "psr-4": {

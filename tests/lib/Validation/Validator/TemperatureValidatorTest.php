@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 
 final class TemperatureValidatorTest extends TestCase
 {
-    private const MESSAGE = 'Temperature must be a number between 0 and 2.';
+    private const string MESSAGE = 'Temperature must be a number between 0 and 2.';
 
     private TemperatureValidator $validator;
 

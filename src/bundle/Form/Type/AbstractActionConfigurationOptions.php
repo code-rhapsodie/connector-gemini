@@ -19,24 +19,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 abstract class AbstractActionConfigurationOptions extends AbstractType
 {
-    /** @var array<string, string> */
-    private array $models;
-
-    private string $defaultModel;
-
-    private int $defaultMaxTokens;
-
-    private float $defaultTemperature;
-
     /**
      * @param string[] $models
      */
-    public function __construct(array $models, string $defaultModel, int $defaultMaxTokens, float $defaultTemperature)
+    public function __construct(private readonly array $models, private readonly string $defaultModel, private readonly int $defaultMaxTokens, private readonly float $defaultTemperature)
     {
-        $this->models = $models;
-        $this->defaultModel = $defaultModel;
-        $this->defaultMaxTokens = $defaultMaxTokens;
-        $this->defaultTemperature = $defaultTemperature;
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -83,6 +70,7 @@ abstract class AbstractActionConfigurationOptions extends AbstractType
         $resolver->setAllowedTypes('translation_mode', 'bool');
     }
 
+    #[\Override]
     public function getParent(): string
     {
         return ActionConfigurationOptions::class;

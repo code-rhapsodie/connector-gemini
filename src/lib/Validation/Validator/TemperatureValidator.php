@@ -12,7 +12,7 @@ use JMS\TranslationBundle\Translation\TranslationContainerInterface;
 
 final class TemperatureValidator implements OptionsValidatorInterface, TranslationContainerInterface
 {
-    public const MESSAGE = 'Temperature must be a number between 0 and 2.';
+    public const string MESSAGE = 'Temperature must be a number between 0 and 2.';
 
     public function validateOptions(OptionsBag $options): array
     {

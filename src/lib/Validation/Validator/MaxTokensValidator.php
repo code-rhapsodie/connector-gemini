@@ -12,9 +12,9 @@ use JMS\TranslationBundle\Translation\TranslationContainerInterface;
 
 final class MaxTokensValidator implements OptionsValidatorInterface, TranslationContainerInterface
 {
-    public const MAX_TOKENS = 4096;
+    public const int MAX_TOKENS = 4096;
 
-    public const MESSAGE = 'Max tokens must be greater than 0 and equal or lower or than ' . self::MAX_TOKENS . '.';
+    public const string MESSAGE = 'Max tokens must be greater than 0 and equal or lower or than ' . self::MAX_TOKENS . '.';
 
     public function validateOptions(OptionsBag $options): array
     {
