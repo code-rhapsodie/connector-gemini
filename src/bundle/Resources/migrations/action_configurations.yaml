@@ -11,7 +11,7 @@
         max_tokens: 4000
         temperature: 1
         prompt: ''
-        model: 'gemini-2.0-flash'
+        model: 'gemini-2.5-flash'
     action_type_identifier: generate_alt_text
     action_type_options:
         max_length: 140
@@ -29,7 +29,7 @@
         max_tokens: 4000
         temperature: 1
         prompt: 'Rewrite this content to improve readability. Preserve meaning and crucial information.'
-        model: 'gemini-2.0-flash'
+        model: 'gemini-2.5-flash'
     action_type_identifier: refine_text
     action_type_options: ~
 
@@ -46,7 +46,7 @@
         max_tokens: 4000
         temperature: 1
         prompt: 'Rewrite given text to identify and fix grammatical and punctuation errors. Preserve meaning and crucial information.'
-        model: 'gemini-2.0-flash'
+        model: 'gemini-2.5-flash'
     action_type_identifier: refine_text
     action_type_options: ~
 
@@ -63,7 +63,7 @@
         max_tokens: 4000
         temperature: 1
         prompt: 'Shorten the given text by 25%. Preserve meaning and crucial information.'
-        model: 'gemini-2.0-flash'
+        model: 'gemini-2.5-flash'
     action_type_identifier: refine_text
     action_type_options: ~
 
@@ -80,7 +80,7 @@
         max_tokens: 4000
         temperature: 1
         prompt: 'Expand the given text by 25%. Preserve meaning and crucial information.'
-        model: 'gemini-2.0-flash'
+        model: 'gemini-2.5-flash'
     action_type_identifier: refine_text
     action_type_options: ~
 
@@ -97,7 +97,7 @@
         max_tokens: 4000
         temperature: 1
         prompt: 'Summarize text into one sentence. Preserve meaning and crucial information.'
-        model: 'gemini-2.0-flash'
+        model: 'gemini-2.5-flash'
     action_type_identifier: refine_text
     action_type_options: ~
 
@@ -114,7 +114,7 @@
         max_tokens: 4000
         temperature: 1
         prompt: 'Rewrite text in professional tone. Preserve meaning and crucial information.'
-        model: 'gemini-2.0-flash'
+        model: 'gemini-2.5-flash'
     action_type_identifier: refine_text
     action_type_options: ~
 
@@ -131,7 +131,7 @@
         max_tokens: 4000
         temperature: 1
         prompt: 'Rewrite text in friendly tone. Preserve meaning and crucial information.'
-        model: 'gemini-2.0-flash'
+        model: 'gemini-2.5-flash'
     action_type_identifier: refine_text
     action_type_options: ~
 
