@@ -61,7 +61,7 @@
         "ibexa/test-core": "~5.0-dev",
         "ibexa/twig-components": "~5.0",
         "ibexa/version-comparison": "~5.0",
-        "matthiasnoback/symfony-dependency-injection-test": "^6.1.0",
+        "matthiasnoback/symfony-dependency-injection-test": "^5.0",
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-symfony": "^2.0",
