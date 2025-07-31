@@ -47,7 +47,6 @@ use Knp\Bundle\MenuBundle\KnpMenuBundle;
 use Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Overblog\GraphQLBundle\OverblogGraphQLBundle;
-use Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -63,7 +62,6 @@ final class Kernel extends IbexaTestKernel
         yield new LexikJWTAuthenticationBundle();
         yield new HautelookTemplatedUriBundle();
         yield new WebpackEncoreBundle();
-        yield new SwiftmailerBundle();
         yield new KnpMenuBundle();
 
         yield new IbexaRestBundle();
