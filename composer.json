@@ -65,7 +65,7 @@
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-symfony": "^2.0",
-        "phpunit/phpunit": "^12",
+        "phpunit/phpunit": "^9",
         "qossmic/deptrac-shim": "^0.24.0 || ^1.0.2",
         "rector/rector": "^2.1"
     },
