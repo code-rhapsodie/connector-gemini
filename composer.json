@@ -41,7 +41,7 @@
         "symfony/yaml": "^7.3"
     },
     "require-dev": {
-        "dama/doctrine-test-bundle": "^v8.3.0",
+        "dama/doctrine-test-bundle": "^v8.2",
         "ibexa/admin-ui": "~5.0",
         "ibexa/code-style": "~2.0.0",
         "ibexa/content-forms": "~5.0",
