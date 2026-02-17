@@ -14,9 +14,9 @@ use PHPUnit\Framework\TestCase;
 
 final class GeminiEmbeddingProviderTest extends TestCase
 {
-    private const string CONTENT = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-    private const string DEFAULT_MODEL_NAME = 'gemini-embedding-001';
-    private const array EXPECTED_EMBEDDING = [-0.0065183877, -0.0015175042, 0.017056655];
+    private const CONTENT = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+    private const DEFAULT_MODEL_NAME = 'gemini-embedding-001';
+    private const EXPECTED_EMBEDDING = [-0.0065183877, -0.0015175042, 0.017056655];
 
     public function testGetEmbeddingUsesDefaultModel(): void
     {
