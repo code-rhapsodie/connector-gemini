@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    CodeRhapsodie\ConnectorGemini\Embedding\GeminiEmbeddingProvider:
+        tags:
+            - { name: 'ibexa.embedding_provider', provider_name: 'ibexa_gemini' }
