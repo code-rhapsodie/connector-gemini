@@ -4,19 +4,19 @@ ibexa:
   system:
     default:
       embedding_models:
-        text-embedding-004-small:
+        text-embedding-001-small:
           name: 'gemini-embedding-001'
           dimensions: 768
           field_suffix: 'gemini_small'
           embedding_provider: 'ibexa_gemini'
-        text-embedding-004-large:
+        text-embedding-001-large:
           name: 'gemini-embedding-001'
           dimensions: 3072
           field_suffix: 'gemini_large'
           embedding_provider: 'ibexa_gemini'
-        text-embedding-004-default:
+        text-embedding-001-default:
           name: 'gemini-embedding-001'
           dimensions: 1536
           field_suffix: 'gemini_ada'
           embedding_provider: 'ibexa_gemini'
-      default_embedding_model: 'gemini-embedding-001'
+      default_embedding_model: 'text-embedding-001-default'
