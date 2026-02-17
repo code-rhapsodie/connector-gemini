@@ -5,18 +5,18 @@ ibexa:
     default:
       embedding_models:
         text-embedding-004-small:
-          name: 'text-embedding-004'
+          name: 'gemini-embedding-001'
           dimensions: 768
           field_suffix: 'gemini_small'
           embedding_provider: 'ibexa_gemini'
         text-embedding-004-large:
-          name: 'text-embedding-004'
+          name: 'gemini-embedding-001'
           dimensions: 3072
           field_suffix: 'gemini_large'
           embedding_provider: 'ibexa_gemini'
         text-embedding-004-default:
-          name: 'text-embedding-004'
+          name: 'gemini-embedding-001'
           dimensions: 1536
           field_suffix: 'gemini_ada'
           embedding_provider: 'ibexa_gemini'
-      default_embedding_model: 'text-embedding-004-default'
+      default_embedding_model: 'gemini-embedding-001'
