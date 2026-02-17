@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @copyright Copyright (C) Ibexa AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- */
 declare(strict_types=1);
 
 namespace CodeRhapsodie\ConnectorGemini\Embedding;
@@ -11,7 +7,6 @@ namespace CodeRhapsodie\ConnectorGemini\Embedding;
 use CodeRhapsodie\Contracts\ConnectorGemini\ClientProviderInterface;
 use Ibexa\Contracts\Core\Search\Embedding\EmbeddingConfigurationInterface;
 use Ibexa\Contracts\Core\Search\Embedding\EmbeddingProviderInterface;
-use RuntimeException;
 
 final class GeminiEmbeddingProvider implements EmbeddingProviderInterface
 {
