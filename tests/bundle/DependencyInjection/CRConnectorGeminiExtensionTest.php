@@ -25,18 +25,18 @@ final class CRConnectorGeminiExtensionTest extends AbstractExtensionTestCase
         $this->load();
 
         $this->assertParameter([
+            'gemini-3-flash' => 'Gemini 3',
             'gemini-2.5-flash' => 'Gemini 2.5',
             'gemini-2.0-flash' => 'Gemini 2.0',
-            'gemini-1.5-flash' => 'Gemini 1.5',
         ], 'text_to_text', 'models');
         $this->assertParameter('gemini-2.0-flash', 'text_to_text', 'default_model');
         $this->assertParameter(4096, 'text_to_text', 'default_max_tokens');
         $this->assertParameter(1.0, 'text_to_text', 'default_temperature');
 
         $this->assertParameter([
+            'gemini-3-flash' => 'Gemini 3',
             'gemini-2.5-flash' => 'Gemini 2.5',
             'gemini-2.0-flash' => 'Gemini 2.0',
-            'gemini-1.5-flash' => 'Gemini 1.5',
         ], 'image_to_text', 'models');
         $this->assertParameter('gemini-2.0-flash', 'image_to_text', 'default_model');
         $this->assertParameter(4096, 'image_to_text', 'default_max_tokens');
