@@ -34,6 +34,7 @@ use Ibexa\Contracts\ConnectorAi\ActionConfigurationServiceInterface;
 use Ibexa\Contracts\ConnectorAi\ActionServiceInterface;
 use Ibexa\Contracts\ConnectorAi\ActionType\ActionTypeInterface;
 use Ibexa\Contracts\ConnectorAi\ActionType\ActionTypeRegistryInterface;
+use Ibexa\Contracts\Core\Test\Persistence\Fixture;
 use Ibexa\Contracts\Core\Test\Persistence\Fixture\YamlFixture;
 use Ibexa\Contracts\Taxonomy\Service\TaxonomyServiceInterface;
 use Ibexa\Contracts\Test\Core\IbexaTestKernel;
@@ -94,7 +95,7 @@ final class Kernel extends IbexaTestKernel
     }
 
     /**
-     * @return iterable<\Ibexa\Contracts\Core\Test\Persistence\Fixture>
+     * @return iterable<Fixture>
      */
     public function getConnectorAiFixtures(): iterable
     {

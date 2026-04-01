@@ -10,7 +10,6 @@ namespace CodeRhapsodie\Tests\ConnectorGemini\ActionHandler;
 
 use CodeRhapsodie\ConnectorGemini\ActionHandler\ImageToTextActionHandler;
 use CodeRhapsodie\Contracts\ConnectorGemini\ClientProviderInterface;
-use Gemini\Contracts\ClientContract;
 use Gemini\Responses\GenerativeModel\GenerateContentResponse;
 use Gemini\Testing\ClientFake;
 use Ibexa\ConnectorAi\ActionContextFactory;
@@ -107,13 +106,15 @@ final class ImageToTextActionHandlerTest extends AbstractActionHandlerTest
     /**
      * @dataProvider provideDataForTestSupports
      */
-    public function testSupports(ActionInterface $action, bool $expectedResult): void
-    {
+    public function testSupports(
+        ActionInterface $action,
+        bool $expectedResult
+    ): void {
         self::assertSame($this->handler->supports($action), $expectedResult);
     }
 
     /**
-     * @return iterable<string, array{\Ibexa\Contracts\ConnectorAi\ActionInterface, bool}>
+     * @return iterable<string, array{ActionInterface, bool}>
      */
     public function provideDataForTestSupports(): iterable
     {

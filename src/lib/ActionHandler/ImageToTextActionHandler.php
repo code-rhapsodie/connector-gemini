@@ -9,6 +9,7 @@ use Gemini\Data\Blob;
 use Gemini\Data\GenerationConfig;
 use Gemini\Enums\MimeType;
 use Ibexa\Contracts\ConnectorAi\Action\DataType\Text;
+use Ibexa\Contracts\ConnectorAi\Action\ImageToText\Action;
 use Ibexa\Contracts\ConnectorAi\Action\ImageToText\Action as ImageToTextAction;
 use Ibexa\Contracts\ConnectorAi\Action\Response\TextResponse;
 use Ibexa\Contracts\ConnectorAi\ActionInterface;
@@ -41,10 +42,12 @@ final class ImageToTextActionHandler extends AbstractActionHandler
     }
 
     /**
-     * @param \Ibexa\Contracts\ConnectorAi\Action\ImageToText\Action $action
+     * @param Action $action
      */
-    public function handle(ActionInterface $action, array $context = []): ActionResponseInterface
-    {
+    public function handle(
+        ActionInterface $action,
+        array $context = []
+    ): ActionResponseInterface {
         $options = $this->resolveOptions($action);
 
         preg_match('#data:(image/[a-z-+]+);base64,([a-zA-Z0-9,+/]+={0,2})#', $action->getInput()->getBase64(), $matches);

@@ -15,8 +15,11 @@ final class ConnectorGeminiParser extends AbstractParser
     /**
      * @param array<mixed> $scopeSettings
      */
-    public function mapConfig(array &$scopeSettings, $currentScope, ContextualizerInterface $contextualizer): void
-    {
+    public function mapConfig(
+        array &$scopeSettings,
+        $currentScope,
+        ContextualizerInterface $contextualizer
+    ): void {
         if (!isset($scopeSettings['connector_gemini'])) {
             return;
         }

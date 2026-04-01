@@ -35,8 +35,10 @@ final class Configuration implements ConfigurationInterface
     /**
      * @param array<string, string> $models
      */
-    private function getActionConfigurationNode(string $name, array $models): NodeDefinition
-    {
+    private function getActionConfigurationNode(
+        string $name,
+        array $models
+    ): NodeDefinition {
         $builder = new TreeBuilder($name);
 
         $rootNode = $builder->getRootNode();

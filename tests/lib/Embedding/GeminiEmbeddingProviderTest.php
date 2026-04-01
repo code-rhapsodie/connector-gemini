@@ -109,8 +109,11 @@ final class GeminiEmbeddingProviderTest extends TestCase
         return json_encode(['embedding' => ['values' => $embedding]], JSON_THROW_ON_ERROR);
     }
 
-    private function getClientProviderMock(string $response, string $model = self::DEFAULT_MODEL_NAME, ?int $maxTokens = null): ClientProviderInterface
-    {
+    private function getClientProviderMock(
+        string $response,
+        string $model = self::DEFAULT_MODEL_NAME,
+        ?int $maxTokens = null
+    ): ClientProviderInterface {
         $embeddingModal = $this->createMock(EmbeddingModalContract::class);
 
         $embeddingModal->method('embedContent')

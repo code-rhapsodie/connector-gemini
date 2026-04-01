@@ -6,7 +6,6 @@ declare(strict_types=1);
 namespace CodeRhapsodie\ConnectorGemini\ActionHandler;
 
 use CodeRhapsodie\Contracts\ConnectorGemini\ClientProviderInterface;
-use Gemini\Client;
 use Gemini\Contracts\ClientContract;
 use Ibexa\Contracts\ConnectorAi\Action\ActionHandlerInterface;
 use Ibexa\Contracts\ConnectorAi\Action\LLMBaseActionTypeInterface;
@@ -64,8 +63,10 @@ abstract class AbstractActionHandler implements ActionHandlerInterface
     /**
      * @return mixed|null
      */
-    protected function getOption(string $key, ActionInterface $action)
-    {
+    protected function getOption(
+        string $key,
+        ActionInterface $action
+    ) {
         $option = null;
 
         if ($action->getRuntimeContext() && $action->getRuntimeContext()->get($key) !== null) {
@@ -158,8 +159,10 @@ abstract class AbstractActionHandler implements ActionHandlerInterface
      *
      * @return array<string>
      */
-    protected function addLengthPrompt(ActionInterface $action, array $prompts): array
-    {
+    protected function addLengthPrompt(
+        ActionInterface $action,
+        array $prompts
+    ): array {
         $maxLength = $this->getOption('max_length', $action);
         if ($maxLength !== null) {
             $prompts[] = 'Do not exceed text length of ' . $maxLength . ' characters';
@@ -228,7 +231,7 @@ abstract class AbstractActionHandler implements ActionHandlerInterface
 
         $data = $this->decode($json);
 
-        if(isset($data['error'])) {
+        if (isset($data['error'])) {
             throw new BadRequestException($data['error']['message']);
         }
     }

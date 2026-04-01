@@ -25,8 +25,10 @@ final class CRConnectorGeminiExtension extends Extension implements PrependExten
     /**
      * @param array<string, mixed> $configs
      */
-    public function load(array $configs, ContainerBuilder $container): void
-    {
+    public function load(
+        array $configs,
+        ContainerBuilder $container
+    ): void {
         $mergedConfig = $this->processConfiguration(new Configuration(), $configs);
         foreach ($mergedConfig as $actionType => $actionTypeConfig) {
             foreach ($actionTypeConfig as $key => $value) {

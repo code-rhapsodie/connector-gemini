@@ -84,8 +84,11 @@ final class CRConnectorGeminiExtensionTest extends AbstractExtensionTestCase
     /**
      * @param mixed $expectedValue
      */
-    private function assertParameter($expectedValue, string $actionType, string $name): void
-    {
+    private function assertParameter(
+        $expectedValue,
+        string $actionType,
+        string $name
+    ): void {
         $key = sprintf('cr.connector_gemini.%s.%s', $actionType, $name);
 
         self::assertEquals($expectedValue, $this->container->getParameter($key));

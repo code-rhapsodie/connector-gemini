@@ -22,12 +22,17 @@ abstract class AbstractActionConfigurationOptions extends AbstractType
     /**
      * @param string[] $models
      */
-    public function __construct(private readonly array $models, private readonly string $defaultModel, private readonly int $defaultMaxTokens, private readonly float $defaultTemperature)
-    {
-    }
+    public function __construct(
+        private readonly array $models,
+        private readonly string $defaultModel,
+        private readonly int $defaultMaxTokens,
+        private readonly float $defaultTemperature
+    ) {}
 
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
+    public function buildForm(
+        FormBuilderInterface $builder,
+        array $options
+    ): void {
         $builder->add('prompt', TextareaType::class, [
             'required' => false,
             'disabled' => $options['translation_mode'],

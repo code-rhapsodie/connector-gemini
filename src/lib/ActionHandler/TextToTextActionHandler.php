@@ -8,6 +8,7 @@ use CodeRhapsodie\Contracts\ConnectorGemini\ClientProviderInterface;
 use Gemini\Data\GenerationConfig;
 use Ibexa\Contracts\ConnectorAi\Action\DataType\Text;
 use Ibexa\Contracts\ConnectorAi\Action\Response\TextResponse;
+use Ibexa\Contracts\ConnectorAi\Action\TextToText\Action;
 use Ibexa\Contracts\ConnectorAi\Action\TextToText\Action as TextToTextAction;
 use Ibexa\Contracts\ConnectorAi\ActionInterface;
 use Ibexa\Contracts\ConnectorAi\ActionResponseInterface;
@@ -38,10 +39,12 @@ final class TextToTextActionHandler extends AbstractActionHandler
     }
 
     /**
-     * @param \Ibexa\Contracts\ConnectorAi\Action\TextToText\Action $action
+     * @param Action $action
      */
-    public function handle(ActionInterface $action, array $context = []): ActionResponseInterface
-    {
+    public function handle(
+        ActionInterface $action,
+        array $context = []
+    ): ActionResponseInterface {
         $options = $this->resolveOptions($action);
 
         $data = $this->client->generativeModel($options['model'])

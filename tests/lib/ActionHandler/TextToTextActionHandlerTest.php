@@ -108,13 +108,15 @@ final class TextToTextActionHandlerTest extends AbstractActionHandlerTest
     /**
      * @dataProvider provideDataForTestSupports
      */
-    public function testSupports(ActionInterface $action, bool $expectedResult): void
-    {
+    public function testSupports(
+        ActionInterface $action,
+        bool $expectedResult
+    ): void {
         self::assertSame($this->handler->supports($action), $expectedResult);
     }
 
     /**
-     * @return iterable<string, array{\Ibexa\Contracts\ConnectorAi\ActionInterface, bool}>
+     * @return iterable<string, array{ActionInterface, bool}>
      */
     public function provideDataForTestSupports(): iterable
     {
