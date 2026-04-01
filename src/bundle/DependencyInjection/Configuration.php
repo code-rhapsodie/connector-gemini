@@ -18,10 +18,12 @@ final class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->append($this->getActionConfigurationNode('text_to_text', [
+                    'gemini-3-flash' => 'Gemini 3',
                     'gemini-2.5-flash' => 'Gemini 2.5',
                     'gemini-2.0-flash' => 'Gemini 2.0',
                 ]))
                 ->append($this->getActionConfigurationNode('image_to_text', [
+                    'gemini-3-flash' => 'Gemini 3',
                     'gemini-2.5-flash' => 'Gemini 2.5',
                     'gemini-2.0-flash' => 'Gemini 2.0',
                 ]))
