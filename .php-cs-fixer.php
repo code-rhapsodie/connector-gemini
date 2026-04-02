@@ -6,7 +6,7 @@ $factory = new Ibexa\CodeStyle\PhpCsFixer\InternalConfigFactory();
 
 // You can omit the call below if you want Ibexa ruleset with no custom rules
 $factory->withRules([
-    // Your rules go here
+    'header_comment' => false,
 ]);
 $config = $factory->buildConfig();
 $config->setFinder(
